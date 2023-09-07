@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>tsri.org.tw</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>yolo_top</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>M_AXIS_S2MM</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_S2MM_TDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TKEEP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_S2MM_TKEEP</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_S2MM_TLAST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_S2MM_TVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_S2MM_TREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S_AXIS_MM2S</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXIS_MM2S_TDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TKEEP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXIS_MM2S_TKEEP</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXIS_MM2S_TLAST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXIS_MM2S_TVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXIS_MM2S_TREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M_AXIS_S2MM_ACLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_S2MM_ACLK</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXIS_S2MM_ACLK.ASSOCIATED_BUSIF">M_AXIS_S2MM</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S_AXIS_MM2S_ACLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXIS_MM2S_ACLK</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXIS_MM2S_ACLK.ASSOCIATED_BUSIF">S_AXIS_MM2S</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>yolo_top</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_cordic_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>376b4012</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>yolo_top</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_cordic_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>376b4012</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>c758f4eb</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>S_AXIS_MM2S_TVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXIS_MM2S_TREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXIS_MM2S_TDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.TBITS&apos;)) - 1)">63</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXIS_MM2S_TKEEP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.TBYTE&apos;)) - 1)">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXIS_MM2S_TLAST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_S2MM_TVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_S2MM_TREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_S2MM_TDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.TBITS&apos;)) - 1)">63</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_S2MM_TKEEP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.TBYTE&apos;)) - 1)">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_S2MM_TLAST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>isif_data_dout</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>isif_strb_dout</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>isif_last_dout</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>isif_user_dout</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>isif_empty_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>isif_read</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>osif_data_din</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>osif_strb_din</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>osif_last_din</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>osif_user_din</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>osif_full_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>osif_write</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>w_cnt</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">5</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>w_CS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXIS_MM2S_ACLK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_S2MM_ACLK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>TBITS</spirit:name>
+        <spirit:displayName>Tbits</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TBITS">64</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>TBYTE</spirit:name>
+        <spirit:displayName>Tbyte</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TBYTE">8</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/cordic_1_1/cordic_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/cordic_0_1/cordic_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/INPUT_STREAM_if.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/OUTPUT_STREAM_if.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/yolo_core.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/yolo_rst_if.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/yolo_top.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_6d1b8929</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_cordic_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="cordic" xilinx:version="6.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/cordic_1_1/cordic_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/cordic_0_1/cordic_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/INPUT_STREAM_if.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/OUTPUT_STREAM_if.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/yolo_core.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/yolo_rst_if.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>rtl/yolo_top.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_cordic_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="cordic" xilinx:version="6.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/yolo_top_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_c758f4eb</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>yolo_top_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>TBITS</spirit:name>
+      <spirit:displayName>Tbits</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TBITS">64</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>TBYTE</spirit:name>
+      <spirit:displayName>Tbyte</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TBYTE">8</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">yolo_top_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>yolo_top_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>20</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-07-05T10:55:28Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25ab4f84_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ec86059_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b681d1f_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c27f2d0_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6192644a_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b2633e6_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e7dc14c_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40ae1a50_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@751e151a_ARCHIVE_LOCATION">e:/proj_2019/nchu/yolotop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="tsri.org.tw:user:yolo_top:1.0_ARCHIVE_LOCATION">f:/soc2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@486771fe_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e263cb7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5efc37c1_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e291fb7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1837b0f7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b2eba96_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42e813c6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79abc104_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@327c2339_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43e6885c_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13667fd3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c31a8d2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29861860_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f31fd2b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a75bd8_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f6aaa37_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5232af6e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c5afaeb_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bfa7e96_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29fd5fbb_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75562565_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39c761bf_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@607cdf3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46a4d72c_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eee0b56_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cf60371_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8a68fd5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@243a8f4_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@691e3e3d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e4f6d6e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40ab46a8_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37246e0c_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e77d5f7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a28285_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@222e00a3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d118e9e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62f9b820_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eb407a1_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2727dcae_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@633d42b3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43e199b9_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f77edf6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a1e723_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a2aa182_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bd256e3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28206aaf_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3efac934_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a8b7d0b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35c6802_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58c59244_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46be6ab7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e690fa2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d1ad4e3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@641a47e3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@334adf59_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@622124ed_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b6571b6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bd1783_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6256be2d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@488d9a6d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a5b2361_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30c935e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6eb4914_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@eb06238_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15f8aa74_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58c50ee8_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a71ab04_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40d81269_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ea3eed3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c2be28d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12b6c0ac_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@662b5c92_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e6828e6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32ec983a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fd9502d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24a35e66_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a4023db_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61fefecc_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47fc3315_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13444e13_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ab6eb53_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f7ed592_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d05419f_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dd4c051_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@212c77fb_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3138ca67_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4377603a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f23fb3f_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a857ac_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bdf243f_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42d46363_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e9aa1a6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1811885b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ea11602_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5caa8343_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c76fb10_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38e39e58_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@481210f5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8ee2fb6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25c576a8_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a237891_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10c7e63_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74e59f48_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63e80ce2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29c61ad9_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e669034_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43ae1a3d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d0fc780_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7eeb3e21_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4330c80a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@601edbec_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d847c88_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24107cc2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8fe7eb9_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50bf2e7e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@651a79a2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a107181_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43fe42ce_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26e0179c_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@253d236_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@751f403a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20816ccf_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@223343b5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4998f11a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57ba9ede_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56f127a0_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e82f99b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34a2d4e5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67189680_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5af66e36_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1def8c06_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e9bfcd6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b311e40_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18b81d29_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@503c52b5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e6d1a96_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@249bbe0f_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38b208cc_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@217723eb_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4264a5b7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5815674e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@665bc9e4_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c3e34fa_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@761c7672_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56d4a9d1_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d8b0ebd_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47251c02_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d143f43_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26fe4e5b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11c7d623_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dce56e7_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bcabd09_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bd6b6a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@281037c3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d48ce7a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22960aa6_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@707ae3f1_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26193a45_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ac31ff5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@662072a4_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22d7755e_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7de9b959_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1093decf_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@658ce79b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f48b4f_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ea56ef2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@921d0db_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fa9a40_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@558f5c50_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@353854bb_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b0ac11a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fc7d15a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eba42a0_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@394d5f9b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e29e612_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17e7a0dd_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@450129c8_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a07f013_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a8b9a5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@608256f_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6737b3a5_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b8f31a0_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c8b310d_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a1ee887_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d0b54e2_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b15d9e9_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24643d46_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1af645cf_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@255db7dd_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@310de1cb_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@311f28a8_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76d4c310_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42c71d08_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fc7b81a_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32b4a649_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cf923fc_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a1d7187_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37c8e9e3_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c1e9f4b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ab5847b_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1782ef_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e9237b9_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@479c3ea4_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e6c1389_ARCHIVE_LOCATION">c:/Users/xyz15/Desktop/2021SOC/SOC_2021/lab6/YoloTop_ref</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ee63730f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d6dd22e2"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="25378d53"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="57be46fc"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7f1d880e"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
